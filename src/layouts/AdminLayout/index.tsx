@@ -68,44 +68,7 @@ const AdminLayout: React.FC = () => {
     token: { colorBgContainer },
   } = theme.useToken();
 
-  // ---------- EARLY RETURNS ----------
-  if (guard.loading) {
-    return (
-      <div style={{height:"100vh",display:"flex",alignItems:"center",justifyContent:"center"}}>
-        <Spin tip="กำลังตรวจสิทธิ์..." size="large" />
-      </div>
-    );
-  }
-
-  if (!guard.allowed) {
-    // guard.status === 401 => ไม่ได้ล็อกอิน / token หมดอายุ
-    // guard.status === 403 => ล็อกอินแล้วแต่ role ไม่ตรง
-    return (
-      <Result
-        status={guard.status === 401 ? "403" : "403"}
-        title={guard.status === 401 ? "กรุณาเข้าสู่ระบบ" : "ไม่มีสิทธิ์เข้าหน้านี้"}
-        subTitle={
-          guard.status === 401
-            ? "บัญชีของคุณยังไม่เข้าสู่ระบบ หรือเซสชันหมดอายุ"
-            : "หน้านี้อนุญาตเฉพาะผู้ดูแลระบบ (admin) เท่านั้น"
-        }
-        extra={
-          <Space>
-            {guard.status === 401 ? (
-              <Button type="primary" onClick={() => navigate("/login")}>
-                ไปหน้าเข้าสู่ระบบ
-              </Button>
-            ) : (
-              <Button type="primary" onClick={() => navigate("/")}>
-                กลับหน้าหลัก
-              </Button>
-            )}
-          </Space>
-        }
-      />
-    );
-  }
-  // ---------- /EARLY RETURNS ----------
+  
 
   // --- แก้ selectedKey: เช็คอันเฉพาะเจาะจงก่อน ---
   const selectedKey = useMemo(() => {
