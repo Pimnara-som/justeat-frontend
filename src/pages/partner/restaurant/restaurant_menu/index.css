@@ -49,6 +49,8 @@
 .menu-grid {
   display: grid;
   gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(640px, 1fr));
+
 }
 
 /* Menu Card */

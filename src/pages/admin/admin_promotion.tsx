@@ -34,7 +34,7 @@ interface PromotionItem {
   promoTypeId: number;
   PromoType?: {
     ID: number;
-    TypeName: string;
+    NameType: string;
   }
 }
 
@@ -162,7 +162,7 @@ const PromotionManagementPage: React.FC = () => {
         id,
         PromoType: x.PromoType ?? {
           ID: x.promoTypeId,
-          TypeName: x.promoTypeId === 1 ? 'Discount' : 'Percent',
+          NameType: x.promoTypeId === 1 ? 'Discount' : 'Percent',
         },
       } as PromotionItem;
     });
