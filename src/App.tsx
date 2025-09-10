@@ -37,7 +37,7 @@ import AdminReport from "./pages/admin/admin_report";
 import AdminRider from "./pages/admin/admin_rider";
 import AdminRestaurants from "./pages/admin/admin_restaurant";
 import AdminProfile from "./pages/admin/admin_profile";
-import AdminPromotion from "./pages/admin/admin_promotion";
+import AdminPromotion from "./pages/admin/admin_promotion.tsx";
 
 // User pages
 import CartPage from "./pages/CartPage";
